@@ -18,4 +18,9 @@ $('.btn').on('click', function () {
   let userChosenColour = this.id;
   userClickedPattern.push(userChosenColour);
   console.log(userClickedPattern);
+  playSound(userChosenColour);
 });
+function playSound(name) {
+  var audio = new Audio('sounds/' + name + '.mp3');
+  audio.play();
+}
