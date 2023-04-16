@@ -1,5 +1,6 @@
 let buttonColours = ['red', 'blue', 'green', 'yellow'];
 let gamePattern = [];
+let userClickedPattern = [];
 
 function nextSequence() {
   let num = Math.floor(Math.random() * 4);
@@ -13,4 +14,8 @@ function nextSequence() {
   audio.play();
 }
 
-nextSequence();
+$('.btn').on('click', function () {
+  let userChosenColour = this.id;
+  userClickedPattern.push(userChosenColour);
+  console.log(userClickedPattern);
+});
