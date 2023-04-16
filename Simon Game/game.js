@@ -14,6 +14,13 @@ function nextSequence() {
   audio.play();
 }
 
+function animatePress(currentColour) {
+  $('#' + currentColour).addClass('pressed');
+  setTimeout(function () {
+    $('#' + currentColour).removeClass('pressed');
+  }, 100);
+}
+
 $('.btn').on('click', function () {
   let userChosenColour = this.id;
   userClickedPattern.push(userChosenColour);
